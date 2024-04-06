@@ -60,6 +60,7 @@ _pixel_skip = (_bytes_per_row * 8) - _res_y;
 
 if(_sda >= 0 && _scl >= 0){
 #if defined(ARDUINO_ARDUINO_NANO33BLE) || defined(ARDUINO_ARCH_MBED_RP2040) || defined(ARDUINO_ARCH_RP2040) || defined(STM32F1xx)
+Wire.setClock(400000);
     wire->setSDA(_sda);
     wire->setSCL(_scl);
 #elif defined(ESP32)
